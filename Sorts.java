@@ -11,4 +11,20 @@ public class Sorts{
       }
     }
   }
+
+  public static void selectionSort(int[] data){
+    for(int i = 0; i < data.length; i++){
+      int minimum = data[i];
+      int indy = i;
+      for(int j = i; j < data.length; j++){
+        if(minimum > data[j]){
+          minimum = data[j];
+          indy = j;
+        }
+      }
+      int hold = data[i];
+      data[i] = minimum;
+      data[indy] = hold;
+    }
+  }
 }
