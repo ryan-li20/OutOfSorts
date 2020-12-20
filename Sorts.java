@@ -1,5 +1,8 @@
 public class Sorts{
   public static void bubbleSort(int[] arrayy){
+    if(arrayy.length < 2){
+      return;
+    }
     for(int i = 0; i < arrayy.length; i++){
       for(int j = 0; j < arrayy.length-1; j++){
         int here = arrayy[j];
@@ -13,6 +16,9 @@ public class Sorts{
   }
 
   public static void selectionSort(int[] data){
+    if(data.length < 2){
+      return;
+    }
     for(int i = 0; i < data.length; i++){
       int minimum = data[i];
       int indy = i;
@@ -25,6 +31,27 @@ public class Sorts{
       int hold = data[i];
       data[i] = minimum;
       data[indy] = hold;
+    }
+  }
+
+  public static void insertionSort(int[] data){
+    if(data.length < 2){
+      return;
+    }
+    for(int i = 1; i < data.length; i++){
+      int here = data[i];
+      int b4 = data[i-1];
+      if(here < b4){
+        for(int j = i; j > 0; j--){
+          if(here < data[j-1]){
+            data[j] = data[j-1];
+          }
+          else{
+            data[j] = here;
+          }
+        }
+      }
+
     }
   }
 }
